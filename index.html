@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template - V2MOM Player Development Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FDFDFD; color: #4A5568; }
+        .header { background-color: #0A2463; color: white; }
+        .footer { background-color: #0A2463; color: white; }
+        .main-section-title { color: #0A2463; }
+        .card { background-color: white; border-radius: 0.75rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); border: 1px solid #E2E8F0; padding: 1.5rem; }
+        .button-back { background-color: #3E8E7E; color: white; padding: 0.5rem 1rem; border-radius: 0.375rem; text-decoration: none; display: inline-block; margin-bottom: 1rem; }
+        .button-back:hover { background-color: #2c6b5d; }
+        .v2mom-section { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #E2E8F0;}
+        .v2mom-section:last-child { border-bottom: none; padding-bottom: 0; }
+        .v2mom-label { display: block; margin-bottom: 0.75rem;} /* Adjusted margin */
+        .v2mom-title { /* New class for the main title */
+            font-weight: 700; 
+            font-size: 1.25rem; /* text-xl */
+            color: #0A2463; /* Dark Blue */
+            text-transform: uppercase; /* Capitalized */
+            display: block;
+            margin-bottom: 0.25rem; /* Space between title and description */
+        }
+        .v2mom-description { /* New class for the description span */
+            font-weight: 500; 
+            font-size: 0.875rem; /* text-sm */
+            color: #F4A261; /* Vibrant Orange */
+            display: block;
+        }
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #D1D5DB; /* gray-300 */
+            border-radius: 0.375rem; /* rounded-md */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+            font-size: 0.875rem;
+        }
+        .form-input:focus, .form-textarea:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            border-color: #3E8E7E; /* Accent-1: Bright Teal */
+            box-shadow: 0 0 0 3px rgba(62, 142, 126, 0.3);
+        }
+        .method-item { margin-bottom: 1rem; padding-left: 1rem; border-left: 3px solid #3E8E7E; }
+        .method-item-label { font-weight: 600; color: #3E8E7E; margin-bottom: 0.25rem; display: block; }
+    </style>
+</head>
+<body class="text-slate-700">
+    <header class="header p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl sm:text-2xl font-bold">V2MOM Player Development Plan</h1>
+            <a href="https://ccampbell1988.github.io/HP1-Post-Task-Section-B-Question-4/" class="button-back">← Back to Physical Prep</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8 mt-4">
+        <div class="card">
+            <h2 class="main-section-title text-2xl font-bold mb-2">Player V2MOM</h2>
+            <p class="mb-6 text-sm text-slate-600">This plan uses the V2MOM framework (Vision, Values, Methods, Obstacles, Measures) to help players define and achieve their development goals. It's a living document to be reviewed and updated regularly.</p>
+
+            <div class="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="playerName" class="block text-sm font-medium text-slate-700 mb-1">Player Name:</label>
+                    <input type="text" id="playerName" name="playerName" class="form-input" placeholder="Enter player's name">
+                </div>
+                <div>
+                    <label for="dateCreated" class="block text-sm font-medium text-slate-700 mb-1">Date Created/Updated:</label>
+                    <input type="date" id="dateCreated" name="dateCreated" class="form-input">
+                </div>
+            </div>
+
+            <!-- Vision -->
+            <div class="v2mom-section">
+                <label for="vision" class="v2mom-label">
+                    <span class="v2mom-title">VISION</span>
+                    <span class="v2mom-description">What do you want to achieve this period (e.g., season, specific phase)?</span>
+                </label>
+                <textarea id="vision" name="vision" rows="3" class="form-textarea" placeholder="e.g., Become a key offensive contributor by consistently generating scoring chances and improving my shot accuracy, while being a reliable two-way player who excels in defensive responsibilities."></textarea>
+            </div>
+
+            <!-- Values -->
+            <div class="v2mom-section">
+                <label for="values" class="v2mom-label">
+                    <span class="v2mom-title">VALUES</span>
+                    <span class="v2mom-description">What principles will guide your actions and decisions? (List 3-5)</span>
+                </label>
+                <textarea id="values" name="values" rows="3" class="form-textarea" placeholder="e.g., 1. Relentless Effort in practices and games. 2. Coachability and openness to feedback. 3. Team-First Mentality. 4. Continuous Improvement. 5. Resilience in facing adversity."></textarea>
+            </div>
+
+            <!-- Methods -->
+            <div class="v2mom-section">
+                <label class="v2mom-label">
+                    <span class="v2mom-title">METHODS</span>
+                    <span class="v2mom-description">What specific actions will you take to achieve your Vision, aligned with your Values?</span>
+                </label>
+                <div id="methodsContainer" class="space-y-4">
+                    <div class="method-item">
+                        <label for="method_1_title" class="method-item-label">Method 1 Title:</label>
+                        <input type="text" id="method_1_title" name="method_1_title" class="form-input mb-2" placeholder="e.g., Enhance Shooting Accuracy & Power">
+                        <label for="method_1_actions" class="block text-xs font-medium text-slate-600 mb-1">Specific Actions/Habits:</label>
+                        <textarea id="method_1_actions" name="method_1_actions" rows="2" class="form-textarea" placeholder="e.g., - Extra 100 pucks after practice 3x/week. - Focus on quick release drills. - Watch NHL forward shooting techniques weekly."></textarea>
+                    </div>
+                    <div class="method-item">
+                        <label for="method_2_title" class="method-item-label">Method 2 Title:</label>
+                        <input type="text" id="method_2_title" name="method_2_title" class="form-input mb-2" placeholder="e.g., Improve Defensive Zone Positioning">
+                        <label for="method_2_actions" class="block text-xs font-medium text-slate-600 mb-1">Specific Actions/Habits:</label>
+                        <textarea id="method_2_actions" name="method_2_actions" rows="2" class="form-textarea" placeholder="e.g., - Study video of own D-zone shifts 2x/week. - Ask coaches for specific feedback on positioning post-practice. - Focus on head-up play and scanning."></textarea>
+                    </div>
+                    <div class="method-item">
+                        <label for="method_3_title" class="method-item-label">Method 3 Title (Keystone Habit):</label>
+                        <input type="text" id="method_3_title" name="method_3_title" class="form-input mb-2" placeholder="e.g., Optimize Sleep & Recovery">
+                        <label for="method_3_actions" class="block text-xs font-medium text-slate-600 mb-1">Specific Actions/Habits:</label>
+                        <textarea id="method_3_actions" name="method_3_actions" rows="2" class="form-textarea" placeholder="e.g., - Aim for 8-9 hours of sleep nightly. - Consistent pre-sleep routine (no screens 1hr before bed). - Follow post-practice/game recovery protocols diligently."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Obstacles -->
+            <div class="v2mom-section">
+                <label for="obstacles" class="v2mom-label">
+                    <span class="v2mom-title">OBSTACLES</span>
+                    <span class="v2mom-description">What challenges or difficulties might you encounter?</span>
+                </label>
+                <textarea id="obstacles" name="obstacles" rows="3" class="form-textarea" placeholder="e.g., - Balancing academic workload with increased training demands. - Maintaining confidence during a scoring slump. - Potential for minor injuries. - Time management for off-ice preparation."></textarea>
+            </div>
+
+            <!-- Measures -->
+            <div class="v2mom-section">
+                <label class="v2mom-label">
+                    <span class="v2mom-title">MEASURES</span>
+                    <span class="v2mom-description">How will you track your progress and know you are succeeding? (Link to Methods)</span>
+                </label>
+                <div id="measuresContainer" class="space-y-4">
+                     <div class="method-item">
+                        <label for="measure_1_method" class="method-item-label">Measure for Method 1 (e.g., Enhance Shooting):</label>
+                        <textarea id="measure_1_method" name="measure_1_method" rows="2" class="form-textarea" placeholder="e.g., - Increase shots on goal per game by 1. - Track % of extra shooting sessions completed. - Coach feedback on shot quality (weekly)."></textarea>
+                    </div>
+                     <div class="method-item">
+                        <label for="measure_2_method" class="method-item-label">Measure for Method 2 (e.g., D-Zone Positioning):</label>
+                        <textarea id="measure_2_method" name="measure_2_method" rows="2" class="form-textarea" placeholder="e.g., - Reduction in 'minus' stats in D-zone. - Positive coach feedback on positioning in video review. - Self-rating of D-zone awareness (1-5 scale weekly)."></textarea>
+                    </div>
+                     <div class="method-item">
+                        <label for="measure_3_method" class="method-item-label">Measure for Method 3 (e.g., Sleep & Recovery):</label>
+                        <textarea id="measure_3_method" name="measure_3_method" rows="2" class="form-textarea" placeholder="e.g., - Average 8+ hours sleep on training nights (tracked via app/journal). - Consistent completion of recovery protocols (self-report). - Subjective energy levels (daily rating 1-5)."></textarea>
+                    </div>
+                    <div class="mt-4">
+                        <label for="progressNotes" class="block text-sm font-medium text-slate-700" style="color: #0A2463; font-size: 1rem; font-weight: 700;">Overall Progress Notes & Reflections (Ongoing):</label>
+                        <textarea id="progressNotes" name="progressNotes" rows="4" class="form-textarea" placeholder="Log weekly progress, challenges, learnings, and adjustments made..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer p-6 text-center mt-12">
+        <p>&copy; <span id="currentYearPDP"></span> Carlee Campbell HP1 Post Task - Physical Prep (Section B Question 4 -  V2MOM Player Development Plan). This is a conceptual representation for certification purposes.</p>
+    </footer>
+    <script>document.getElementById('currentYearPDP').textContent = new Date().getFullYear();</script>
+</body>
+</html>
